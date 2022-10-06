@@ -2,16 +2,44 @@
 
 {% block content %}
 
-<input class="c-checkbox" type="checkbox" id="checkbox">
-<div class="c-formContainer">
-    <form class="c-form" action="">
-        <input class="c-form__input" type="url" name="url" id="url" placeholder="https://example.com"
-            pattern="https://.*" size="30" required>
-        <label class="c-form__buttonLabel" for="checkbox">
-            <button class="c-form__button" type="submit">Search</button>
-        </label>
-        <label class="c-form__toggle" for="checkbox" data-title="Start Searching"></label>
-    </form>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-lg-3"></div>
+
+
+        <div class="col-lg-6">
+            <form class="search-form">
+                <label for="url" class="form-label pi-label">Your product URL</label>
+                <div class="input-group mb-3">
+                    <input class="form-control search-form-input" type="url" name="url" id="url"
+                        placeholder="https://example.com" pattern="https://.*" size="30" required>
+                </div>
+                <button type="submit" class="btn btn-primary search-form-btn" disabled>Submit</button>
+                <button type="button" class="btn btn-secondary search-form-clear-btn">Clear</button>
+
+            </form>
+        </div>
+
+
+        <div class="col-lg-3"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>
+                YOUR Product
+            </h1>
+        </div>
+        <div class="col-lg-6"><input /></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>
+                Our Suggestion
+            </h1>
+        </div>
+        <div class="col-lg-6"><input /></div>
+    </div>
 
 </div>
 
