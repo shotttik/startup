@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 import re
+from automation.config import config_browser
+from automation.webdriver import Browser
 app = Flask(__name__)
 
 
@@ -33,4 +35,6 @@ def search():
         return {"Error": "Sorry, our program doesn't support that website"}
 
     domain = re.findall('://([\w\-\.]+).ge', supported_website)[0]
+    browser_i = Browser(config_browser(), url)
+    browser_i.quit()
     return {'domain': domain}

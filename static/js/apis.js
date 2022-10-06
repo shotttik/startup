@@ -8,3 +8,11 @@ async function postData(url = '', data = {}) {
     });
     return response.json(); // parses JSON response into native JavaScript objects
 }
+
+
+const send_url = () => {
+    let url = document.querySelector('.search-form-input').value;
+    postData('/search/', { 'url': url }).then((data) => {
+        console.log(data.domain); // JSON data parsed by `data.json()` call
+    });;
+};

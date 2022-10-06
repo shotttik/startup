@@ -7,7 +7,6 @@ const check_url_web = (url) => {
     return false;
 };
 
-
 //setup before functions
 let typingTimer;                //timer identifier
 let doneTypingInterval = 200;  //time in ms 
@@ -28,11 +27,9 @@ function doneTyping() {
         document.querySelector('.search-form-btn').disabled = false;
     };
 }
-const send_url = () => {
-    let url = document.querySelector('.search-form-input').value;
-    postData('/search/', { 'url': url }).then((data) => {
-        console.log(data.domain); // JSON data parsed by `data.json()` call
-    });;
-};
+
 document.querySelector('.search-form-btn').addEventListener('click', send_url)
-document.querySelector('.search-form-clear-btn').addEventListener('click', function () { document.querySelector('.search-form-input').value = ''; });
+document.querySelector('.search-form-clear-btn').addEventListener('click', function () {
+    document.querySelector('.search-form-input').value = '';
+    document.querySelector('.search-form-btn').disabled = true;
+});
