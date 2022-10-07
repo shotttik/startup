@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 import re
 from automation.config import config_browser
 from automation.webdriver import Browser
+import importlib.util
+import sys
+import json
 app = Flask(__name__)
 
 
@@ -36,5 +39,14 @@ def search():
 
     domain = re.findall('://([\w\-\.]+).ge', supported_website)[0]
     browser_i = Browser(config_browser(), url)
+
+    pth = f'automation/websites/{domain}/parser.py'
+    cls_name = 'Parse'
+    spec = importlib.util.spec_from_file_location(cls_name, pth)
+    foo = importlib.util.module_from_spec(spec)
+    sys.modules[cls_name] = foo
+    spec.loader.exec_module(foo)
+    data = foo.Main().parser(html=browser_i.driver.page_source)
+
     browser_i.quit()
-    return {'domain': domain}
+    return json.dumps({'data': data})

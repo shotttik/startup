@@ -3,12 +3,16 @@ import re
 from tools import remove_spaces
 
 
-class ParseZoommer:
+class Main:
 
     @staticmethod
-    def parse(html):
+    def parser(html):
         soup = BeautifulSoup(html, 'html.parser').find(
             'div', {'class': 'body'})
+
+        # image
+        image = soup.find('div', {'class': 'current-image'}).img['src']
+        # title
         t = soup.find('h1', {'class': 'n-product-title-text'}).text
         title = remove_spaces(t)
 
@@ -25,6 +29,8 @@ class ParseZoommer:
         for row in rows:
             cols = row.find_all('div', {'class': 'column'})
             if 'ვიდეობარათის მოდელი:' in cols[0].text:
-                gpu = cols[1]
+                gpu = remove_spaces(cols[1].text)
                 break
                 # @TODO need to scrape gpu list and give gpu value
+
+        return {'image': image, 'title': title, 'price': price, 'gpu': gpu}
