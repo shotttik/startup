@@ -3,7 +3,7 @@ from tools import remove_spaces, remove_characters
 import re
 
 
-class ParseAlta:
+class ParseUltra:
 
     @staticmethod
     def parser(html):
