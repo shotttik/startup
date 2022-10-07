@@ -16,7 +16,7 @@ class ParseZoommer:
         # removing unciode characters
         clean_p = p.encode("ascii", "ignore").decode()
         # removing spaces and price character 'ლ'
-        price = int(remove_spaces(clean_p)[:-1])
+        price: str = remove_spaces(clean_p)[:-1]
 
         # GPU
         rows = soup.find('div', {'id': 'n-prod-spec'}
