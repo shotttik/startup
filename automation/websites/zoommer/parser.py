@@ -26,4 +26,5 @@ class ParseZoommer:
             cols = row.find_all('div', {'class': 'column'})
             if 'ვიდეობარათის მოდელი:' in cols[0].text:
                 gpu = cols[1]
+                break
                 # @TODO need to scrape gpu list and give gpu value

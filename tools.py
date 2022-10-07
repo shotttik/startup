@@ -2,5 +2,8 @@ import re
 
 
 def remove_spaces(string,):
-    clean_string = re.sub(r"[\n\t][  +]*", "", string)
-    return clean_string
+    return re.sub(r"[\n\t][  +]*", "", string)
+
+
+def remove_characters(string):
+    return re.sub(r'[!@#$.,]', '', string)

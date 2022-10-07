@@ -21,3 +21,4 @@ class ParseAlta:
             if label == 'გრაფიკული კონტროლერი:':
                 gpu = f.find(
                     'div', {'class': 'ty-product-feature__value'}).text
+                break
