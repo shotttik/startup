@@ -9,7 +9,7 @@ class Main:
     def parser(html):
         soup = BeautifulSoup(html, 'html.parser')
         # image
-        image = soup.find('div', {'class': 'pro-image'}).img['src']
+        image = soup.find('div', {'class': 'pro-image'}).a['href']
         # title
         right_info = soup.find(
             'div', {'class': 'col-sm-6 right_info'})
