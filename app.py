@@ -13,8 +13,8 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/search/', methods=['POST'])
-def search():
+@app.route('/get-product/', methods=['POST'])
+def get_product():
     json_data = request.json
 
     if not json_data:

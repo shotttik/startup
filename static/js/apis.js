@@ -16,14 +16,14 @@ const send_url = () => {
         alert("Please enter a valid URL");
         return;
     };
-    postData('/search/', { 'url': url }).then((data) => {
+    postData('/get-product/', { 'url': url }).then((data) => {
         d = data.data;
         document.querySelector('.search-gr').className = 'col-lg-6'
         document.querySelector('.first-product-row').style.visibility = 'visible';
         document.querySelector('.first-product-title .card-title').textContent = d.title;
         document.querySelector('.first-product-img img').src = d.image;
         document.querySelector('.first-product-gpu .card-subtitle').textContent = d.gpu;
-        document.querySelector('.first-product-price .price').textContent = d.price + 'ლ';
+        document.querySelector('.first-product-price .price').textContent = d.price + ' ლ';
         console.log(data.json); // JSON data parsed by `data.json()` call
     });;
 };
