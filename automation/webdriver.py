@@ -8,7 +8,7 @@ class Browser():
 
     instance = None
 
-    def __new__(cls, config_browser, url):
+    def __new__(cls, config_browser, url=None):
 
         if cls.instance is None:
             cls.__instance = super(Browser, cls).__new__(cls)
@@ -29,8 +29,8 @@ class Browser():
                     GeckoDriverManager().install()), options=chrome_options)
             else:
                 assert ("Support for Firefox or Chrome only!")
-
-            cls.driver.get(url)
+            if url:
+                cls.driver.get(url)
         return cls.__instance
 
     @classmethod

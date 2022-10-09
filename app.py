@@ -5,6 +5,7 @@ from automation.webdriver import Browser
 import importlib.util
 import sys
 import json
+from automation.websites.sites import WEBSITES
 app = Flask(__name__)
 
 
@@ -24,12 +25,8 @@ def get_product():
     if url is None:
         return {"Error": "Json URL is empty"}
 
-    websites = ['https://alta.ge/',
-                'https://zoommer.ge/',
-                'https://ultra.ge/']
-
     supported_website = None
-    for website in websites:
+    for website in WEBSITES:
         if url.startswith(website):
             supported_website = website
             break
@@ -50,3 +47,8 @@ def get_product():
 
     browser_i.quit()
     return json.dumps({'data': data})
+
+
+@app.route('/search-product/', methods=['POST'])
+def search_product():
+    json_data = request.json

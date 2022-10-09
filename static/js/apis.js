@@ -16,14 +16,19 @@ const send_url = () => {
         alert("Please enter a valid URL");
         return;
     };
+    let search_gr = document.querySelector('.search-gr')
+    let first_product_row = document.querySelector('.first-product-row')
+    let first_product_title = document.querySelector('.first-product-title .card-title')
+    let first_product_img = document.querySelector('.first-product-img img')
+    let first_product_gpu = document.querySelector('.first-product-gpu .card-subtitle')
+    let first_product_price = document.querySelector('.first-product-price .price')
     postData('/get-product/', { 'url': url }).then((data) => {
         d = data.data;
-        document.querySelector('.search-gr').className = 'col-lg-6'
-        document.querySelector('.first-product-row').style.visibility = 'visible';
-        document.querySelector('.first-product-title .card-title').textContent = d.title;
-        document.querySelector('.first-product-img img').src = d.image;
-        document.querySelector('.first-product-gpu .card-subtitle').textContent = d.gpu;
-        document.querySelector('.first-product-price .price').textContent = d.price + ' ლ';
-        console.log(data.json); // JSON data parsed by `data.json()` call
+        search_gr.className = 'col-lg-6 search-gr'
+        first_product_row.style.visibility = 'visible';
+        first_product_title.textContent = d.title;
+        first_product_img.src = d.image;
+        first_product_gpu.textContent = d.gpu;
+        first_product_price.textContent = d.price + ' ლ';
     });;
 };
