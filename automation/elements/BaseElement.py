@@ -63,5 +63,5 @@ class BaseElement:
 
     def get_multiple_elements(self):
         LOGGER.info(f'Click on element {self.name}')
-        WebDriverWait(Browser.getInstance(), self.wait_time).until(
-            EC.presence_of_all_elements_located(self.by_locator)).click()
+        return WebDriverWait(Browser.getInstance(), self.wait_time).until(
+            EC.presence_of_all_elements_located(self.by_locator))

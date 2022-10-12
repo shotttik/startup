@@ -16,9 +16,10 @@ class FindBetter:
         lpt_btn = Button(AltaLocators.LAPTOPS_CATEGORY, 'Laptop Category BTN')
         lpt_btn.do_click_with_action()
         Browser.getInstance()
+        # this for to get competitive products only
         product_columns = BaseElement(
             AltaLocators.PRODUCT_COL, 'Product column')
-        # @TODO გავაგრძელოთ პარსინგი ალტას ლეპტოპების პეიჯზე, ფასის შედარება და 300 ლარამდე იაფის შედარება(პაგინაცია დონტ4გეტ)
+        products = product_columns.get_multiple_elements()
 
     @classmethod
     def search(cls):
