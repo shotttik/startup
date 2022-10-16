@@ -17,5 +17,5 @@ class AltaProducts:
             LOGGER.info('Products not found')
 
         for product in products:
-            if int(product.find_element(*AltaLocators.PRODUCT_PRICE).text) - int(price) <= 300:
+            if int(product.find_element(*AltaLocators.PRODUCT_PRICE).text) - int(price) <= 400:
                 product.find_element(*AltaLocators.PRODUCT_TITLE).click()
