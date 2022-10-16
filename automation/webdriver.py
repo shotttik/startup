@@ -38,5 +38,10 @@ class Browser():
         return cls.__instance.driver
 
     @classmethod
+    def change_window(cls, id):
+        cls.__instance.driver.switch_to.window(
+            cls.__instance.driver.window_handles[id])
+
+    @classmethod
     def quit(cls):
         return cls.__instance.driver.quit()
