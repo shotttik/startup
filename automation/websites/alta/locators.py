@@ -12,7 +12,7 @@ class AltaLocators:
 
     PRODUCT_COL = (By.XPATH, "//div[contains(@class,'ty-column3')]")
     PRODUCT_PRICE = (By.XPATH, "//span[@class='ty-price-num']")
-    PRODUCT_TITLE = (By.XPATH, "//div[@class='ty-grid-list__item-name']")
+    PRODUCT_TITLE = (By.XPATH, "//div[@class='ty-grid-list__item-name']//a")
 
     PAGINATION_NEXT_BTN = (
         By.XPATH, "//a[contains(@class, 'ty-pagination__next')]")

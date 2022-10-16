@@ -33,3 +33,4 @@ document.querySelector('.search-form-clear-btn').addEventListener('click', funct
     document.querySelector('.search-form-input').value = '';
     document.querySelector('.search-form-btn').disabled = true;
 });
+document.querySelector('#search-btn').addEventListener('click', search_product)

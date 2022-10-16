@@ -18,6 +18,12 @@ let first_product_price = document.querySelector('.first-product-price .price');
 let url = document.querySelector('.search-form-input');
 
 
+let second_product_row = document.querySelector('.second-product-row');
+let second_product_title = document.querySelector('.second-product-title .card-title');
+let second_product_img = document.querySelector('.second-product-img img');
+let second_product_gpu = document.querySelector('.second-product-gpu .card-subtitle');
+let second_product_price = document.querySelector('.second-product-price .price');
+
 
 const send_url = () => {
     let url_value = url.value
@@ -27,6 +33,7 @@ const send_url = () => {
     };
     postData('/get-product/', { 'url': url_value }).then((data) => {
         d = data.data;
+        console.log(data);
         search_gr.className = 'col-lg-6 search-gr'
         first_product_row.style.visibility = 'visible';
         first_product_title.textContent = d.title;
@@ -44,14 +51,21 @@ const search_product = () => {
         alert("Url isn't valid a valid URL");
         return;
     };
-    postData('/get-product/', { 'gpu': first_product_gpu.textContent }).then((data) => {
-        d = data.data;
-        search_gr.className = 'col-lg-6 search-gr'
-        first_product_row.style.visibility = 'visible';
-        first_product_title.textContent = d.title;
-        first_product_img.src = d.image;
-        first_product_gpu.textContent = d.gpu;
-        first_product_price.textContent = d.price + ' ლ';
+    postData('/search-product/', { 'price': first_product_price.textContent, 'gpu': first_product_gpu.textContent }).then((data) => {
+        console.log(data);
+        if (data.status == 'success') {
+            second_product_row.style.visibility = 'visible';
+            second_product_title.textContent = data.title;
+            second_product_img.src = data.image;
+            second_product_gpu.textContent = data.gpu;
+            second_product_price.textContent = data.price + ' ლ';
+        }
+        else if (d.status == 'not_found') {
+            console.log('Cannot find Cheaper Product')
+        }
+        else {
+            console.log('Something went wrong');
+        }
     });;
 
 };

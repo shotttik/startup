@@ -1,11 +1,13 @@
-from flask import Flask, render_template, request
-import re
 from automation.config import config_browser
 from automation.webdriver import Browser
+from automation.websites.sites import WEBSITES
+from automation.websites.main import FindBetter
+from tools import remove_characters
+from flask import Flask, render_template, request
+import re
 import importlib.util
 import sys
 import json
-from automation.websites.sites import WEBSITES
 app = Flask(__name__)
 
 
@@ -51,4 +53,8 @@ def get_product():
 
 @app.route('/search-product/', methods=['POST'])
 def search_product():
+    # example {'price': '3390 ლ', 'gpu': 'NVIDIA GeForce GTX 1650'}
     json_data = request.json
+    price = remove_characters(json_data['price'])
+    data = FindBetter.search(json_data['gpu'], price)
+    return json.dumps(data)

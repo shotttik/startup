@@ -6,4 +6,4 @@ def remove_spaces(string,):
 
 
 def remove_characters(string):
-    return re.sub(r'[!@#$.,]', '', string)
+    return re.sub(r'[!@#$.,\sლ]', '', string)
