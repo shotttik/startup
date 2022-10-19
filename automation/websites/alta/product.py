@@ -5,6 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from automation.websites.alta.locators import AltaLocators, WAIT_TIME
 from automation.webdriver import Browser
 from automation.websites.alta.parser import Main
+from bs4 import BeautifulSoup
 
 import pandas as pd
 import logging
@@ -29,37 +30,36 @@ class AltaProducts:
 
     @classmethod
     def inspect_products(cls, gpu, price):
+
         WebDriverWait(Browser.getInstance(), WAIT_TIME).until(
             EC.presence_of_element_located(AltaLocators.LAPTOPS_CATEGORY)).click()
-        products = WebDriverWait(Browser.getInstance(), WAIT_TIME).until(
-            EC.presence_of_all_elements_located(AltaLocators.PRODUCT_COL))
+        ####################
+        soup = BeautifulSoup(
+            Browser.getInstance().page_source, 'html.parser')
+        products = soup.find_all('div', {'class': 'ty-column3'})
         if not products:
             LOGGER.info('Products not found')
             return {"status": "error"}
 
         while True:
-            for product in products:
-                if not int(product.find_element(*AltaLocators.PRODUCT_PRICE).text) - int(price) <= 400:
+            for p in products:
+                p_price = p.find('span', {'class': 'ty-price-num'}).text
+                if int(price) - int(p_price) >= 400:
                     continue
                 else:
-                    print('its going to click')
-                    p = product.find_element(
-                        *AltaLocators.PRODUCT_TITLE)
-                    ActionChains(Browser.getInstance()).move_to_element(p).key_down(
-                        Keys.CONTROL).click(p).key_up(Keys.CONTROL).perform()
-                    Browser.change_window(id=1)
+                    p_url = p.find('a', {'class': 'product-title'}).get('href')
+                    Browser.open_link_in_new_tab(p_url)
                     data = Main.parser(Browser.getInstance().page_source)
-
                     if cls.compare_gpus(data["gpu"], gpu):
-                        Browser.quit()
                         LOGGER.info("Found Cheaper Product")
                         return {"status": "success", "data": data}
-
-                    Browser.getInstance().close()
+                    Browser.close_current_window()
                     Browser.change_window(id=0)
+                    #########
             pagination_next = Browser.getInstance().find_elements(
                 *AltaLocators.PAGINATION_NEXT_BTN)
             if pagination_next:
+                Browser.scroll_to_element(pagination_next[0])
                 pagination_next[0].click()
             else:
                 LOGGER.info("Can't find cheaper product")

@@ -43,5 +43,19 @@ class Browser():
             cls.__instance.driver.window_handles[id])
 
     @classmethod
+    def close_current_window(cls):
+        cls.__instance.driver.close()
+
+    @classmethod
+    def open_link_in_new_tab(cls, url):
+        cls.__instance.driver.execute_script(f"window.open('{url}');")
+        cls.change_window(1)
+
+    @classmethod
+    def scroll_to_element(cls, el):
+        cls.__instance.driver.execute_script(
+            "arguments[0].scrollIntoView(true);", el)
+
+    @classmethod
     def quit(cls):
         return cls.__instance.driver.quit()
