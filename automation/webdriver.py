@@ -2,6 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from automation.websites.alta.locators import AltaLocators, WAIT_TIME
 
 
 class Browser():
@@ -55,6 +58,21 @@ class Browser():
     def scroll_to_element(cls, el):
         cls.__instance.driver.execute_script(
             "arguments[0].scrollIntoView(true);", el)
+
+    @classmethod
+    def wait_to_element_located(cls, selector):
+        return WebDriverWait(cls.__instance.driver, WAIT_TIME).until(
+            EC.presence_of_element_located(selector))
+
+    @classmethod
+    def wait_to_change_url(cls):
+        return WebDriverWait(cls.__instance.driver, WAIT_TIME).until(
+            EC.url_changes(cls.__instance.driver.current_url))
+
+    @classmethod
+    def wait_element_to_be_clickable(cls, selector):
+        return WebDriverWait(cls.__instance.driver, WAIT_TIME).until(
+            EC.element_to_be_clickable(selector))
 
     @classmethod
     def quit(cls):

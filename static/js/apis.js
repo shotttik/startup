@@ -51,14 +51,14 @@ const search_product = () => {
         alert("Url isn't valid a valid URL");
         return;
     };
-    postData('/search-product/', { 'price': first_product_price.textContent, 'gpu': first_product_gpu.textContent }).then((data) => {
-        console.log(data);
-        if (data.status == 'success') {
+    postData('/search-product/', { 'price': first_product_price.textContent, 'gpu': first_product_gpu.textContent }).then((response) => {
+        console.log(response);
+        if (response.status == 'success') {
             second_product_row.style.visibility = 'visible';
-            second_product_title.textContent = data.title;
-            second_product_img.src = data.image;
-            second_product_gpu.textContent = data.gpu;
-            second_product_price.textContent = data.price + ' ლ';
+            second_product_title.textContent = response.data.title;
+            second_product_img.src = response.data.image;
+            second_product_gpu.textContent = response.data.gpu;
+            second_product_price.textContent = response.data.price + ' ლ';
         }
         else if (d.status == 'not_found') {
             console.log('Cannot find Cheaper Product')
