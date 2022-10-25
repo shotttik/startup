@@ -31,9 +31,10 @@ const send_url = () => {
         alert("Please enter a valid URL");
         return;
     };
+    second_product_row.style.visibility = 'hidden';
+    first_product_row.style.visibility = 'hidden';
     postData('/get-product/', { 'url': url_value }).then((data) => {
         d = data.data;
-        console.log(data);
         search_gr.className = 'col-lg-6 search-gr'
         first_product_row.style.visibility = 'visible';
         first_product_title.textContent = d.title;

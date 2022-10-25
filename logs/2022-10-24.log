@@ -1,0 +1,146 @@
+INFO — 2022-10-24 11:35:23 — Message: 
+
+INFO — 2022-10-24 11:36:25 — Message: 
+
+INFO — 2022-10-24 11:36:55 — Message: 
+
+INFO — 2022-10-24 11:37:48 — Message: 
+
+INFO — 2022-10-24 11:41:23 — Message: element click intercepted: Element <a data-ca-scroll=".cm-pagination-container" class="ty-pagination__item ty-pagination__btn ty-pagination__next cm-history cm-ajax" href="https://alta.ge/notebooks-page-3.html" data-ca-page="3" data-ca-target-id="pagination_contents">...</a> is not clickable at point (1375, 913). Other element would receive the click: <img class="ty-pict    " id="det_img_39290" src="https://alta.ge/images/thumbnails/270/250/detailed/246/115102_1.jpg?t=1657513523" alt="" title="">
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f6b5e6d2c3 <unknown>
+#1 0x55f6b5c7683a <unknown>
+#2 0x55f6b5cb73b4 <unknown>
+#3 0x55f6b5cb4d9c <unknown>
+#4 0x55f6b5cb2384 <unknown>
+#5 0x55f6b5cb0f36 <unknown>
+#6 0x55f6b5ca4871 <unknown>
+#7 0x55f6b5ccdf42 <unknown>
+#8 0x55f6b5ca4073 <unknown>
+#9 0x55f6b5cce0ae <unknown>
+#10 0x55f6b5ce5a50 <unknown>
+#11 0x55f6b5ccdd63 <unknown>
+#12 0x55f6b5ca27e3 <unknown>
+#13 0x55f6b5ca3a21 <unknown>
+#14 0x55f6b5ebb18e <unknown>
+#15 0x55f6b5ebe622 <unknown>
+#16 0x55f6b5ea1aae <unknown>
+#17 0x55f6b5ebf2a3 <unknown>
+#18 0x55f6b5e95ecf <unknown>
+#19 0x55f6b5edf588 <unknown>
+#20 0x55f6b5edf706 <unknown>
+#21 0x55f6b5ef98b2 <unknown>
+#22 0x7fc2737b4609 <unknown>
+
+INFO — 2022-10-24 11:41:49 — Message: element click intercepted: Element <a data-ca-scroll=".cm-pagination-container" class="ty-pagination__item ty-pagination__btn ty-pagination__next cm-history cm-ajax" href="https://alta.ge/notebooks-page-4.html" data-ca-page="4" data-ca-target-id="pagination_contents">...</a> is not clickable at point (1375, 913). Other element would receive the click: <img class="ty-pict    " id="det_img_38574" src="https://alta.ge/images/thumbnails/270/250/detailed/242/124780_1.jpg?t=1657513558" alt="" title="">
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f0bce612c3 <unknown>
+#1 0x55f0bcc6a83a <unknown>
+#2 0x55f0bccab3b4 <unknown>
+#3 0x55f0bcca8d9c <unknown>
+#4 0x55f0bcca6384 <unknown>
+#5 0x55f0bcca4f36 <unknown>
+#6 0x55f0bcc98871 <unknown>
+#7 0x55f0bccc1f42 <unknown>
+#8 0x55f0bcc98073 <unknown>
+#9 0x55f0bccc20ae <unknown>
+#10 0x55f0bccd9a50 <unknown>
+#11 0x55f0bccc1d63 <unknown>
+#12 0x55f0bcc967e3 <unknown>
+#13 0x55f0bcc97a21 <unknown>
+#14 0x55f0bceaf18e <unknown>
+#15 0x55f0bceb2622 <unknown>
+#16 0x55f0bce95aae <unknown>
+#17 0x55f0bceb32a3 <unknown>
+#18 0x55f0bce89ecf <unknown>
+#19 0x55f0bced3588 <unknown>
+#20 0x55f0bced3706 <unknown>
+#21 0x55f0bceed8b2 <unknown>
+#22 0x7f134453b609 <unknown>
+
+INFO — 2022-10-24 11:43:02 — Message: element click intercepted: Element <a data-ca-scroll=".cm-pagination-container" class="ty-pagination__item ty-pagination__btn ty-pagination__next cm-history cm-ajax" href="https://alta.ge/notebooks-page-4.html" data-ca-page="4" data-ca-target-id="pagination_contents">...</a> is not clickable at point (1375, 913). Other element would receive the click: <img class="ty-pict    " id="det_img_38574" src="https://alta.ge/images/thumbnails/270/250/detailed/242/124780_1.jpg?t=1657513558" alt="" title="">
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x56141d49b2c3 <unknown>
+#1 0x56141d2a483a <unknown>
+#2 0x56141d2e53b4 <unknown>
+#3 0x56141d2e2d9c <unknown>
+#4 0x56141d2e0384 <unknown>
+#5 0x56141d2def36 <unknown>
+#6 0x56141d2d2871 <unknown>
+#7 0x56141d2fbf42 <unknown>
+#8 0x56141d2d2073 <unknown>
+#9 0x56141d2fc0ae <unknown>
+#10 0x56141d313a50 <unknown>
+#11 0x56141d2fbd63 <unknown>
+#12 0x56141d2d07e3 <unknown>
+#13 0x56141d2d1a21 <unknown>
+#14 0x56141d4e918e <unknown>
+#15 0x56141d4ec622 <unknown>
+#16 0x56141d4cfaae <unknown>
+#17 0x56141d4ed2a3 <unknown>
+#18 0x56141d4c3ecf <unknown>
+#19 0x56141d50d588 <unknown>
+#20 0x56141d50d706 <unknown>
+#21 0x56141d5278b2 <unknown>
+#22 0x7f4de965d609 <unknown>
+
+INFO — 2022-10-24 11:43:40 — Message: 
+
+INFO — 2022-10-24 11:44:59 — Found Cheaper Product
+INFO — 2022-10-24 11:46:12 — Message: element click intercepted: Element <a data-ca-scroll=".cm-pagination-container" class="ty-pagination__item ty-pagination__btn ty-pagination__next cm-history cm-ajax" href="https://alta.ge/notebooks-page-5.html" data-ca-page="5" data-ca-target-id="pagination_contents">...</a> is not clickable at point (694, 580). Other element would receive the click: <img class="ty-pict    " id="det_img_38746" src="https://alta.ge/images/thumbnails/270/250/detailed/243/121279_1.jpg?t=1657513588" alt="" title="">
+  (Session info: headless chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55ea333132c3 <unknown>
+#1 0x55ea3311c83a <unknown>
+#2 0x55ea3315d3b4 <unknown>
+#3 0x55ea3315ad9c <unknown>
+#4 0x55ea33158384 <unknown>
+#5 0x55ea33156f36 <unknown>
+#6 0x55ea3314a871 <unknown>
+#7 0x55ea33173f42 <unknown>
+#8 0x55ea3314a073 <unknown>
+#9 0x55ea331740ae <unknown>
+#10 0x55ea3318ba50 <unknown>
+#11 0x55ea33173d63 <unknown>
+#12 0x55ea331487e3 <unknown>
+#13 0x55ea33149a21 <unknown>
+#14 0x55ea3336118e <unknown>
+#15 0x55ea33364622 <unknown>
+#16 0x55ea33347aae <unknown>
+#17 0x55ea333652a3 <unknown>
+#18 0x55ea3333becf <unknown>
+#19 0x55ea33385588 <unknown>
+#20 0x55ea33385706 <unknown>
+#21 0x55ea3339f8b2 <unknown>
+#22 0x7faf5a726609 <unknown>
+
+INFO — 2022-10-24 11:46:30 — Message: element click intercepted: Element <a data-ca-scroll=".cm-pagination-container" class="ty-pagination__item ty-pagination__btn ty-pagination__next cm-history cm-ajax" href="https://alta.ge/notebooks-page-4.html" data-ca-page="4" data-ca-target-id="pagination_contents">...</a> is not clickable at point (694, 580). Other element would receive the click: <img class="ty-pict    " id="det_img_40006" src="https://alta.ge/images/thumbnails/270/250/detailed/251/130126_1.png?t=1657514930" alt="" title="">
+  (Session info: headless chrome=106.0.5249.119)
+Stacktrace:
+#0 0x5617c48662c3 <unknown>
+#1 0x5617c466f83a <unknown>
+#2 0x5617c46b03b4 <unknown>
+#3 0x5617c46add9c <unknown>
+#4 0x5617c46ab384 <unknown>
+#5 0x5617c46a9f36 <unknown>
+#6 0x5617c469d871 <unknown>
+#7 0x5617c46c6f42 <unknown>
+#8 0x5617c469d073 <unknown>
+#9 0x5617c46c70ae <unknown>
+#10 0x5617c46dea50 <unknown>
+#11 0x5617c46c6d63 <unknown>
+#12 0x5617c469b7e3 <unknown>
+#13 0x5617c469ca21 <unknown>
+#14 0x5617c48b418e <unknown>
+#15 0x5617c48b7622 <unknown>
+#16 0x5617c489aaae <unknown>
+#17 0x5617c48b82a3 <unknown>
+#18 0x5617c488eecf <unknown>
+#19 0x5617c48d8588 <unknown>
+#20 0x5617c48d8706 <unknown>
+#21 0x5617c48f28b2 <unknown>
+#22 0x7f9f7d507609 <unknown>
+

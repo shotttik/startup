@@ -4,6 +4,9 @@ from automation.config import config_browser
 from automation.elements.Button import Button, BaseElement
 from automation.websites.alta.locators import AltaLocators
 from automation.websites.alta.product import AltaProducts
+from logger import CustomLogger
+
+LOGGER = CustomLogger.get_logger(__name__)
 
 
 class FindBetter:
@@ -12,7 +15,16 @@ class FindBetter:
     def search(cls, gpu, price) -> dict:
         browser_i = Browser(config_browser())
         browser_i.driver.get(WEBSITES[0])
+        data = None
         data = AltaProducts.inspect_products(gpu, price)
+        return data
+        try:
+            data = AltaProducts.inspect_products(gpu, price)
+        except Exception as e:
+            LOGGER.info(e)
+        finally:
+            browser_i.quit()
+            return data
         # @TODO find cheaper product in other supported websites
         # for website in WEBSITES:
         #     browser_i.driver.get(website)
@@ -22,5 +34,3 @@ class FindBetter:
         #         cls.zoommer()
         #     elif 'ultra' in website:
         #         cls.ultra()
-        browser_i.quit()
-        return data

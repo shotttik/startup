@@ -2,8 +2,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from automation.webdriver import Browser
-import logging
-LOGGER = logging.getLogger(__name__)
+from logger import CustomLogger
+
+LOGGER = CustomLogger.get_logger(__name__)
 
 
 class BaseElement:

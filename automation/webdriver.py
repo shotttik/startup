@@ -5,6 +5,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from automation.websites.alta.locators import AltaLocators, WAIT_TIME
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class Browser():
@@ -73,6 +74,13 @@ class Browser():
     def wait_element_to_be_clickable(cls, selector):
         return WebDriverWait(cls.__instance.driver, WAIT_TIME).until(
             EC.element_to_be_clickable(selector))
+
+    @classmethod
+    def do_click_with_action(cls, selector):
+        el = WebDriverWait(cls.__instance.driver, WAIT_TIME).until(
+            EC.presence_of_element_located(selector))
+        actions = ActionChains(Browser.getInstance())
+        actions.move_to_element(el).click().perform()
 
     @classmethod
     def quit(cls):
